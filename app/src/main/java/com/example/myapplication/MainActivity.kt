@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.myapplication.api.user.model.LoginModel
+import com.example.myapplication.api.user.serivce.AuthenticationService
+import com.google.gson.JsonObject
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,40 +26,36 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_submit.setOnClickListener{
-            Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show();
+        //    Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show();
+
+            login(user_name,password)
         }
-
-        /*loginService.login(LoginModel(username, password)) { loginResponse ->
-//                response = loginResponse
-//                if (response !== null) {
-//                    Toast.makeText(
-//                        applicationContext,
-//                        response.toString(),
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                    AppPreferences.isLogin = true
-//                    AppPreferences.token = response?.get("token").toString()
-//                    AppPreferences._id = response?.get("uid").toString()
-//                    userService.getUser { res ->
-//                        if (res !== null) {
-//                            AppPreferences.user = UserModel(
-//                                res.get("_id").toString(),
-//                                res.get("login").toString(),
-//                                res.get("password").toString(),
-//                                res.get("email").toString(),
-//                                res.get("isAdmin").asBoolean,
-//                                res.get("isStaff").asBoolean
-//                            )
-//                        }
-//                    }
-//                    this.startActivity(Intent(this, MainActivity::class.java))
-//                } else {
-//                    Toast.makeText(
-//                        applicationContext,
-//                        "Login Failed ! ",
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                }*/
-
     }
+    private fun login(usernameInput: EditText, passwordInput: EditText) {
+        val username = usernameInput.text.toString()
+        val password = passwordInput.text.toString()
+
+        if (username.isNotEmpty() && password.isNotEmpty()
+                && username.isNotBlank() && password.isNotBlank()) {
+
+            val loginService = AuthenticationService()
+            var response: JsonObject?
+
+            loginService.login(LoginModel(username, password)) { loginResponse ->
+                response = loginResponse
+                if (response !== null) {
+
+                    this.startActivity(Intent(this, Profile::class.java))
+                    Toast.makeText(this,"Connexion Réussie", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(
+                            applicationContext,
+                            "Login Failed ! ",
+                            Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
+    }
+
 }
