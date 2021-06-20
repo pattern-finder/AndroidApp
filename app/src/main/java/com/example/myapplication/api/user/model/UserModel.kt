@@ -1,6 +1,5 @@
 package com.example.myapplication.api.user.model
 
-import java.time.LocalDate
 import java.util.*
 
 data class UserModel(

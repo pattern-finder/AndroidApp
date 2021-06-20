@@ -19,4 +19,5 @@ object ApiClient {
 
         return retrofit?.create(service)!!
     }
+
 }
