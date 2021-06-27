@@ -1,13 +1,14 @@
 package com.example.myapplication.api.user.controller
 
-import com.example.myapplication.api.user.model.UserModel
+import com.example.myapplication.api.user.model.UserContent
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Headers
 
 
 interface UserProfileInterface {
-
-    @GET("users/60a91153076d48ec19c7c1b8")
-    fun getUserInformation() : Call<UserModel>
+    @Headers("Content-Type: application/json")
+    @GET("/users")
+    fun getUser(): Call<UserContent>
 
 }

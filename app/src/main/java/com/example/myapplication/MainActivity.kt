@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         btn_submit.setOnClickListener{
         //    Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show();
-
             login(user_name,password)
         }
     }
@@ -45,7 +44,9 @@ class MainActivity : AppCompatActivity() {
                 response = loginResponse
                 if (response !== null) {
 
-                    this.startActivity(Intent(this, Profile::class.java))
+                    val intent = Intent(this,Profile::class.java)
+                    intent.putExtra("username",username)
+                    startActivity(intent)
                     Toast.makeText(this,"Connexion Réussie", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(
