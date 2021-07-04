@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun login(usernameInput: EditText, passwordInput: EditText) {
+
         val username = usernameInput.text.toString()
         val password = passwordInput.text.toString()
 
