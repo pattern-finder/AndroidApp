@@ -8,6 +8,7 @@ object ApiClient {
     private const val BASE_URL: String = "https://api.picspy.vagahbond.com/"
     private var retrofit: Retrofit? = null
     private var httpClient = OkHttpClient.Builder()
+    private var mRetrofit: Retrofit? = null
 
     fun <T> buildService(service: Class<T>): T {
         this.retrofit = Retrofit.Builder()
@@ -18,5 +19,7 @@ object ApiClient {
 
         return retrofit?.create(service)!!
     }
+
+
 
 }

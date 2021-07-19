@@ -11,4 +11,7 @@ interface UserProfileInterface {
     @GET("/users")
     fun getUser(): Call<UserContent>
 
+    @GET("/users")
+    fun fetchAllusers(): Call<UserContent>
+
 }
