@@ -5,11 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.api.user.model.ChallengeModel
 
 class ChallengeAdapter(val challengeModel: ChallengeModel): RecyclerView.Adapter<ChallengeViewHolder>() {
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChallengeViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_layout,parent,false)
@@ -21,6 +24,8 @@ class ChallengeAdapter(val challengeModel: ChallengeModel): RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ChallengeViewHolder, position: Int) {
+
+
         return holder.bindView(challengeModel.content!![position] )
     }
 
@@ -31,6 +36,12 @@ class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
     private val description : TextView = itemView.findViewById(R.id.item_detail)
     private val imageView : ImageView  = itemView.findViewById(R.id.item_image)
 
+    init {
+        itemView.setOnClickListener { v:View ->
+            val position:Int = adapterPosition
+            Toast.makeText(itemView.context,"you clicked in  ${position + 1}",Toast.LENGTH_LONG).show()
+        }
+    }
 
     fun bindView(challengeModel: ChallengeModel.Content?){
 
@@ -39,4 +50,7 @@ class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         imageView.setImageResource(R.drawable.image1)
 
     }
+
+
+
 }
