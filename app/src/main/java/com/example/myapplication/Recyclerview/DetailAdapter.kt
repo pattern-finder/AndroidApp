@@ -52,7 +52,6 @@ class DetailViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         title.text = detailModel.id
 
-
     }
 
 }

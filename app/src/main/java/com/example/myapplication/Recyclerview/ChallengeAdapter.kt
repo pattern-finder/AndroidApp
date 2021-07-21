@@ -1,5 +1,6 @@
 package com.example.myapplication.Recyclerview
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +10,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Challenge_details
+import com.example.myapplication.Profile
 import com.example.myapplication.R
+import com.example.myapplication.api.ApiClient
 import com.example.myapplication.api.user.model.ChallengeModel
 
 
@@ -46,12 +50,12 @@ class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         itemView.setOnClickListener { v:View ->
             val position:Int = adapterPosition
+
             val intent = Intent(itemView.context,Challenge_details::class.java)
-            val bundle = Bundle()
-            bundle.putString("myname","hellow world")
-            startActivity(itemView.context,intent,bundle)
-            Toast.makeText(itemView.context,"you ${id.text}",Toast.LENGTH_LONG).show()
+            intent.putExtra("ayoub",id.text)
+            itemView.context.startActivity(intent)
             //val intent = Intent(itemView.context,Challenge_details::class.java)
+            Toast.makeText(itemView.context,"you are ${id.text}",Toast.LENGTH_LONG).show()
 
 
         }
@@ -66,8 +70,6 @@ class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
 
     }
-
-
 
 
 }

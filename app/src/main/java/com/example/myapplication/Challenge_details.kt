@@ -7,11 +7,13 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.example.myapplication.Recyclerview.ChallengeViewHolder
 import com.example.myapplication.Recyclerview.DetailAdapter
 import com.example.myapplication.api.ApiClient
 import com.example.myapplication.api.user.controller.DetailInterface
@@ -34,9 +36,13 @@ import java.net.URL
 
 
 
+        val id = intent.getStringExtra("ayoub")
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView1)
         val serviceGenerator = ApiClient.buildService(DetailInterface::class.java)
-        val call  = serviceGenerator.getDetailChallenge()
+        val challengeViewHolder:ChallengeViewHolder
+
+        val call  = serviceGenerator.getDetailChallenge(id!!)
 
         call.enqueue(object : Callback<DetailModel>{
             override fun onFailure(call: Call<DetailModel>, t: Throwable) {
