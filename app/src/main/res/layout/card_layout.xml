@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
-    android:id="@+id/card_view"
+    android:id="@+id/detail_view"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#9E91AF"
+    app:cardBackgroundColor="#0E939F"
     app:cardCornerRadius="12dp"
     card_view:cardElevation="3dp"
     card_view:contentPadding="4dp">

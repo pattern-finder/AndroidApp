@@ -7,9 +7,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.example.myapplication.Recyclerview.DetailAdapter
 import com.example.myapplication.api.ApiClient
 import com.example.myapplication.api.user.controller.DetailInterface
 
@@ -22,15 +25,41 @@ import retrofit2.Response
 import retrofit2.http.Url
 import java.net.URL
 
-@Suppress("DEPRECATION")
-class Challenge_details : AppCompatActivity() {
+ class Challenge_details : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_challenge_details)
 
-        val image = findViewById<ImageView>(R.id.imageView)
+
+
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView1)
+        val serviceGenerator = ApiClient.buildService(DetailInterface::class.java)
+        val call  = serviceGenerator.getDetailChallenge()
+
+        call.enqueue(object : Callback<DetailModel>{
+            override fun onFailure(call: Call<DetailModel>, t: Throwable) {
+                t.printStackTrace()
+
+            }
+
+            override fun onResponse(call: Call<DetailModel>, response: Response<DetailModel>) {
+
+                if (response.isSuccessful){
+
+                    recyclerView.apply {
+                        layoutManager = LinearLayoutManager(this@Challenge_details)
+                        adapter = DetailAdapter(response.body()!!)
+                    }
+                }
+            }
+
+        })
+
+
+/*
+        val image = findViewById<ImageView>(R.id.item_image)
 
         val request = ApiClient.buildService(DetailInterface::class.java)
         val call = request.getDetailChallenge()
@@ -67,7 +96,7 @@ class Challenge_details : AppCompatActivity() {
                 error("KO")
             }
         })
-
+*/
 
     }
 }
