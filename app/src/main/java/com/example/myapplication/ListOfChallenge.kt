@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,7 @@ import com.example.myapplication.api.user.model.ChallengeModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.FieldPosition
 
 class ListOfChallenge : AppCompatActivity() {
 
@@ -50,7 +52,7 @@ class ListOfChallenge : AppCompatActivity() {
 
         })
 
-
-
     }
+
+
 }

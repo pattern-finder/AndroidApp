@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".ListOfChallenge"></activity>
+        <activity android:name=".Challenge_details"></activity>
+        <activity android:name=".ListOfChallenge" />
         <activity android:name=".Profile" />
         <activity android:name=".MainActivity">
             <intent-filter>

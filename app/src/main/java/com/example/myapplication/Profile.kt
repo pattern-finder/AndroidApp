@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.myapplication.api.ApiClient
 import com.example.myapplication.api.user.controller.UserProfileInterface
 import com.example.myapplication.api.user.model.UserContent
@@ -26,7 +27,8 @@ class Profile : AppCompatActivity() {
         var listeOfChallenge  = findViewById<Button>(R.id.buttonChallenge)
         val profileName = intent.getStringExtra("username")
 
-        image.setImageResource(R.drawable.image_homme)
+
+        image.setImageResource(R.drawable.profile)
 
         val request = ApiClient.buildService(UserProfileInterface::class.java)
         val call = request.getUser()
