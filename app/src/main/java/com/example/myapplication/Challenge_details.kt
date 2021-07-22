@@ -40,7 +40,6 @@ import java.net.URL
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView1)
         val serviceGenerator = ApiClient.buildService(DetailInterface::class.java)
-        val challengeViewHolder:ChallengeViewHolder
 
         val call  = serviceGenerator.getDetailChallenge(id!!)
 
