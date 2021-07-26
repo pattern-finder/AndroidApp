@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.myapplication.api.ApiClient
 import com.example.myapplication.api.user.controller.UserProfileInterface
 import com.example.myapplication.api.user.model.UserContent
@@ -28,7 +29,7 @@ class Profile : AppCompatActivity() {
         val profileName = intent.getStringExtra("username")
 
 
-        image.setImageResource(R.drawable.profile)
+        //image.setImageResource(R.drawable.profile)
 
         val request = ApiClient.buildService(UserProfileInterface::class.java)
         val call = request.getUser()
@@ -44,9 +45,19 @@ class Profile : AppCompatActivity() {
                         for(u in userReponse?.content!!){
 
                             if(u?.username ==profileName){
+                                val url = u?.avatarUrl
+                                val changeUrl1 = url!!.replace("http","https")
+                                val changeUrl2 = changeUrl1.replace(":80","")
+                                Glide.with(image)
+                                        .load(changeUrl2).dontAnimate()
+                                        .skipMemoryCache(true) //2
+                                        .diskCacheStrategy(DiskCacheStrategy.NONE) //3
+                                        .into(image)
                                 email.text= u!!.email
                                 full_name.text= u.username
                                 date.text= u.createdAt
+
+
                             }
 
                         }
