@@ -50,8 +50,6 @@ class DetailViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
                 .diskCacheStrategy(DiskCacheStrategy.NONE) //3
                 .into(image)
 
-        title.text = detailModel.id
-
     }
 
 }
