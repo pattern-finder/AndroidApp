@@ -11,4 +11,5 @@ interface ChallengeInterface {
     @GET("/challenges")
     fun getChallenges() : Call<ChallengeModel>
 
+
 }
