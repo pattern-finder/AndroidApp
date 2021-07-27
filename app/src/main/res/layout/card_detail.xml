@@ -6,7 +6,7 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/detail_view"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#84ABE1"
+    app:cardBackgroundColor="#4B6885"
     app:cardCornerRadius="12dp"
     card_view:cardElevation="3dp"
     card_view:contentPadding="4dp">
