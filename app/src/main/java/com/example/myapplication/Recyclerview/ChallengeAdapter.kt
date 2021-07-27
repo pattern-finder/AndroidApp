@@ -42,7 +42,6 @@ class ChallengeAdapter(val challengeModel: ChallengeModel): RecyclerView.Adapter
 class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
     private  val title: TextView = itemView.findViewById(R.id.item_title)
     private val description : TextView = itemView.findViewById(R.id.item_detail)
-    private val imageView : ImageView  = itemView.findViewById(R.id.item_image)
     private val id : TextView = itemView.findViewById(R.id.item_id)
 
 
@@ -65,7 +64,6 @@ class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         title.text = challengeModel!!.name
         description.text= challengeModel.instructions
-        imageView.setImageResource(R.drawable.image1)
         id.text = challengeModel.id
 
 

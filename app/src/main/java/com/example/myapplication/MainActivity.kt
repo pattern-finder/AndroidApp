@@ -17,13 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         var user_name = findViewById<EditText>(R.id.et_user_name)
         var password = findViewById<EditText>(R.id.et_password)
-        var btn_reset = findViewById<Button>(R.id.btn_reset)
         var btn_submit = findViewById<Button>(R.id.btn_submit)
 
-        btn_reset.setOnClickListener{
-            user_name.setText("")
-            password.setText("")
-        }
 
         btn_submit.setOnClickListener{
         //    Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show();
