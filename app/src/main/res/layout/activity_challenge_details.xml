@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#546C8C"
     tools:context=".Challenge_details">
 
     <androidx.recyclerview.widget.RecyclerView
