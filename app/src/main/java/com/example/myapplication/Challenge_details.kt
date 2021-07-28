@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -36,9 +37,14 @@ import java.net.URL
         setContentView(R.layout.activity_challenge_details)
 
 
+        var user_name = findViewById<EditText>(R.id.et_user_name)
+        val instruc = findViewById<TextView>(R.id.textView2)
+
 
         val id = intent.getStringExtra("ayoub")
+        val instuction = intent.getStringExtra("instru")
 
+        instruc.text = instuction
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView1)
         val serviceGenerator = ApiClient.buildService(DetailInterface::class.java)
 

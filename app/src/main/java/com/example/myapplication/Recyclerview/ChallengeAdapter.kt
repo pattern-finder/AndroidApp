@@ -52,6 +52,7 @@ class ChallengeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
             val intent = Intent(itemView.context,Challenge_details::class.java)
             intent.putExtra("ayoub",id.text)
+            intent.putExtra("instru",description.text)
             itemView.context.startActivity(intent)
             //val intent = Intent(itemView.context,Challenge_details::class.java)
             Toast.makeText(itemView.context,"you are ${id.text}",Toast.LENGTH_LONG).show()

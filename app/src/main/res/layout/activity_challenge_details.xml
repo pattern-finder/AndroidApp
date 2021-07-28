@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="68dp"
-        android:layout_height="71dp"
+        android:layout_width="59dp"
+        android:layout_height="66dp"
         android:layout_marginTop="28dp"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
@@ -33,11 +33,10 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="249dp"
-        android:layout_height="122dp"
+        android:layout_width="260dp"
+        android:layout_height="153dp"
         android:layout_marginTop="32dp"
         android:autoSizeTextType="uniform"
-        android:text="voila la liste des images à traité par ce challenge"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +44,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Instruction"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
