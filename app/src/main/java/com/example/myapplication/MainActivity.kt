@@ -59,30 +59,21 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun OnCreayeOptionMenu(menu: Menu?):Boolean{
+     fun OncreateOptionsMenu(menu: Menu?):Boolean{
 
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu_item,menu)
 
+        menuInflater.inflate(R.menu.menu_item,menu)
         return true
     }
 
     override fun onOptionsItemSelected(item:MenuItem):Boolean{
 
-        when(item.itemId){
+        when(item.itemId) {
 
-            R.id.about->{
-                Toast.makeText(this,"yyeessss",Toast.LENGTH_LONG).show()
-                return true
-            }
-            else ->{
-
-                return super.onOptionsItemSelected(item)
-            }
+            R.id.about -> Toast.makeText(this, "yyeessss", Toast.LENGTH_LONG).show()
         }
 
+            return super.onOptionsItemSelected(item)
 
-        return super.onOptionsItemSelected(item)
-    }
-
+        }
 }

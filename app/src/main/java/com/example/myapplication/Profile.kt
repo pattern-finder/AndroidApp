@@ -24,7 +24,6 @@ class Profile : AppCompatActivity() {
         var image = findViewById<ImageView>(R.id.profilePhoto)
         var full_name = findViewById<TextView>(R.id.fullName)
         var email = findViewById<TextView>(R.id.email)
-        var date = findViewById<TextView>(R.id.CreateAt)
         var listeOfChallenge  = findViewById<Button>(R.id.buttonChallenge)
         val profileName = intent.getStringExtra("username")
 
@@ -55,7 +54,6 @@ class Profile : AppCompatActivity() {
                                         .into(image)
                                 email.text= u!!.email
                                 full_name.text= u.username
-                                date.text= u.createdAt
 
 
                             }
