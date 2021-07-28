@@ -3,6 +3,8 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -14,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         var user_name = findViewById<EditText>(R.id.et_user_name)
         var password = findViewById<EditText>(R.id.et_password)
@@ -53,6 +56,33 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+
+    fun OnCreayeOptionMenu(menu: Menu?):Boolean{
+
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_item,menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item:MenuItem):Boolean{
+
+        when(item.itemId){
+
+            R.id.about->{
+                Toast.makeText(this,"yyeessss",Toast.LENGTH_LONG).show()
+                return true
+            }
+            else ->{
+
+                return super.onOptionsItemSelected(item)
+            }
+        }
+
+
+        return super.onOptionsItemSelected(item)
     }
 
 }
