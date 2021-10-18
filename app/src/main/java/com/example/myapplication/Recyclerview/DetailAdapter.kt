@@ -42,8 +42,7 @@ class DetailViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
     fun bindView(detailModel: DetailModel.Content.Picture){
 
         val url = detailModel.file
-        val changeUrl1 = url!!.replace("http","https")
-        val changeUrl2 = changeUrl1.replace(":80","")
+        val changeUrl2 = url?.replace(":80","")
         Glide.with(itemView)
                 .load(changeUrl2).dontAnimate()
                 .skipMemoryCache(true) //2

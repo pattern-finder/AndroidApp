@@ -12,13 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Challenge_details" />
         <activity android:name=".ListOfChallenge" />
         <activity android:name=".Profile" />
-        <activity android:name=".SplachScreenActivity"
+        <activity
+            android:name=".SplachScreenActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

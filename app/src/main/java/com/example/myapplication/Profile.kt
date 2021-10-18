@@ -45,8 +45,7 @@ class Profile : AppCompatActivity() {
 
                             if(u?.username ==profileName){
                                 val url = u?.avatarUrl
-                                val changeUrl1 = url!!.replace("http","https")
-                                val changeUrl2 = changeUrl1.replace(":80","")
+                                val changeUrl2 = url?.replace(":80","")
                                 Glide.with(image)
                                         .load(changeUrl2).dontAnimate()
                                         .skipMemoryCache(true) //2

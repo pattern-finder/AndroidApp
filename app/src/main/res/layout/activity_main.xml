@@ -10,11 +10,13 @@
         android:id="@+id/ll_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         android:gravity="center"
-        android:background="#4b5563"
-        android:padding="25dp"
+        android:orientation="vertical"
 
-        android:orientation="vertical">
+        android:padding="25dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -29,8 +31,8 @@
             android:layout_height="91dp"
             android:hint="User Name"
             android:textAlignment="center"
-            android:textColor="#6bfff7"
-            android:textColorHint="#52afaa" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/et_password"
@@ -39,19 +41,19 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:textAlignment="center"
-            android:textColor="#6bfff7"
-            android:textColorHint="#52afaa" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="129dp"
             android:layout_height="59dp"
+            android:background="#C13E22"
             android:text="Login"
             android:textAllCaps="false" />
 
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

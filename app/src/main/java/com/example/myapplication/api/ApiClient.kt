@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object ApiClient {
-    private const val BASE_URL: String = "https://api.picspy.vagahbond.com/"
+    private const val BASE_URL: String = "https://picspy-api.herokuapp.com/"
     private var retrofit: Retrofit? = null
     private var httpClient = OkHttpClient.Builder()
     private var mRetrofit: Retrofit? = null

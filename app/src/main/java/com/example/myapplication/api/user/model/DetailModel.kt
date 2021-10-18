@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import androidx.annotation.Keep
 
 @Keep
-data class DetailModel(
+data class  DetailModel(
     @SerializedName("content")
     val content: Content?,
     @SerializedName("message")
