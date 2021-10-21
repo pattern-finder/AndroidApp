@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".AboutActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="312dp"
+        tools:layout_editor_absoluteY="254dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+
+            android:src="@drawable/logo" />
+
+        <TextView
+
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="34dp"
+            android:textColor="@color/white"
+            android:text="@string/About" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:text="This website has been done for a school project named 'Projet Annuel' in ESGI.
+This platform allows users to train on the detection of pattern in images. This training will take place under form of exercise with increasing difficulty.
+An algorithm is given by a user and the result is provided with its performance statistics." />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
