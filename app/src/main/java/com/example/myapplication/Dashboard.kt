@@ -13,6 +13,7 @@ class Dashboard : AppCompatActivity() {
 
         var loginButton  = findViewById<Button>(R.id.loginId)
         var about = findViewById<ImageView>(R.id.about)
+        var challenge = findViewById<ImageView>(R.id.challengeStart)
 
         loginButton.setOnClickListener {
 
@@ -26,6 +27,12 @@ class Dashboard : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+        challenge.setOnClickListener{
+
+            intent= Intent(this,StartActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

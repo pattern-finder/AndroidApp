@@ -75,6 +75,7 @@
                     android:orientation="vertical"
                     android:gravity="center">
                     <ImageView
+                        android:id="@+id/challengeStart"
                         android:layout_width="44dp"
                         android:layout_height="44dp"
                         android:src="@drawable/challenge"
@@ -82,7 +83,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Challenges"
+                        android:text="Let's START"
                         android:textSize="16sp"
                         android:textColor="@color/white"
                         android:layout_marginTop="20dp"/>
